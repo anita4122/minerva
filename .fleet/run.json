@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "type": "gradle",
+      "name": "Build",
+      "tasks": ["build"],
+    },
+    {
+      "type": "command",
+      "name": "Run Compiler",
+      "dependsOn": ["Build"],
+      "program": "sh",
+      "args": ["mc"],
+    },
+
+  ]
+}

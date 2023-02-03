@@ -1,0 +1,30 @@
+
+number          -> DIGIT | FLOATING ;
+char            -> "a".."z" | "A".."Z";
+ident           -> char? |  "_" ;
+
+expr            -> literal | grouping
+logical_expr    -> logical expr
+comparison_expr ->
+
+literal        -> ident | number? | "\"" ident "\"" ;
+
+comparison_op   -> ">" | ">=" | "<" | "<=" | "==" | "!=" | "||";
+assignment_op   -> "=" | ":=" ;
+arithmetic_op   -> "+" | "-" | "/" | "*" | "%" ;
+logical_op      -> "&&" | "||" | "!" ;
+bitwise_op      -> "~" | "&" | "^" | "|" | "<<" | ">>";
+
+primitive       -> "void" | "bool" | "char" | "string" | "rune" | "u8" | "i8"
+                | "u16" | "i16" | "u32" | "i32" | "u64" | "i64" | "f32"
+                | "f64" | "size" | "nil" ;
+
+keyword         ->  "pkg" | "use" | "def" | "main" | "mut" | "struct" | "class"
+                | "interface" | "defer" | "return" | "for" | "loop" | "break"
+                | "fall" | "if" | "true" | "false" | "ex" | "assert" | "as"
+                | "else" | "with" | "enum" | "self" ;
+
+type            -> primitive | ident | pointer
+
+pointer         -> "^"type
+

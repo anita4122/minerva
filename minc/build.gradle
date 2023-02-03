@@ -1,0 +1,27 @@
+plugins {
+//  id 'application'
+  id 'java'
+}
+
+group = 'io.ansan.minc'
+
+ext {
+  java_main_class = 'io.ansan.minc.driver.Main'
+}
+
+jar {
+  manifest {
+    attributes 'Implementation-Title': 'minc',
+    'Implementation-Version': 1.0,
+    'Main-Class': java_main_class
+  }
+}
+
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'org.bytedeco:llvm:13.0.1-1.5.7'
+}

@@ -1,0 +1,5 @@
+pkg main
+
+ex def main():void -> {
+  #c_printf("Hello, World!")
+}
